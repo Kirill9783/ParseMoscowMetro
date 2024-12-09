@@ -60,7 +60,7 @@ public class DataCollector {
             }
             if (doc.getName().startsWith("depths")) {
                 String depth = String.valueOf(stationJsonObject.get("depth"));
-                listStations.get(stationName).setDate(depth);
+                listStations.get(stationName).setDepth(depth);
             }
 
         }

@@ -24,12 +24,12 @@ public class Main {
         MetroMap metro = new MetroMap(stationsObject, linesArray, connectionsArray);
 
         JSONCreator jsonWriter = new JSONCreator();
-        jsonWriter.writeInJSONFile(metro.getMetroObject(), "C:\\IdeaProjects1\\MyGit\\ParseMoscowMetro\\data\\metro.json");
+        jsonWriter.writeInJSONFile(metro.getMetroObject(), "data\\metro.json");
         JSONReader jsonReader = new JSONReader();
-        System.out.println(jsonReader.getStationsAndLine("C:\\IdeaProjects1\\MyGit\\ParseMoscowMetro\\data\\metro.json"));
+        System.out.println(jsonReader.getStationsAndLine("data\\metro.json"));
 
         DataCollector collector = new DataCollector();
-        collector.fileReader("C:\\IdeaProjects1\\MyGit\\ParseMoscowMetro\\data\\data");
+        collector.fileReader("data\\data");
         Map<String, Station> listStations = collector.getListStations();
         setParameterHasConnection(connections, listStations);
         setParameterLineName(stations, linesArray, listStations);
@@ -54,7 +54,7 @@ public class Main {
         }
         stationObject.put("stations", stationsArray);
         JSONCreator jsonWriter1 = new JSONCreator();
-        jsonWriter1.writeInJSONFile(stationObject, "C:\\IdeaProjects1\\MyGit\\ParseMoscowMetro\\data\\stations.json");
+        jsonWriter1.writeInJSONFile(stationObject, "data\\stations.json");
     }
 
     private static void setParameterHasConnection(TreeSet<Connections> connections, Map<String, Station> listStations) {
